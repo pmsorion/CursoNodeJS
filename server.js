@@ -19,14 +19,14 @@ router.get('/message', (req, res) => {
     res.header({
         "custom-header": "Nuestro valor personalizado"
     })
-    response.success(req, res, 'Lista de mensajes personalizada desde server');
+    response.success(req, res, 'Error inesperado');
     //res.send('Lista de mensajes');
 });
 
 router.post('/message', (req, res) => {
     console.log(req.query);
     if (req.query.error =='ok') {
-        response.error(req, res, 'Error al crear desde server', 401);
+        response.error(req, res, 'Error al crear desde server', 500, 'Es una simulacion de los errores');
     } else {
         response.success(req, res, 'Creado correctamente desde server', 201);
     }
