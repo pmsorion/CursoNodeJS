@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyparser = require('body-parser');
+const response = require('./network/response');
 //nos permite trabajar y gestionar nuestras peticiones
 const router = express.Router();
 const PUERTO = 3000;
@@ -18,19 +19,20 @@ router.get('/message', (req, res) => {
     res.header({
         "custom-header": "Nuestro valor personalizado"
     })
-    res.send('Lista de mensajes');
+    response.success(req, res, 'Lista de mensajes personalizada desde server');
+    //res.send('Lista de mensajes');
 });
 
 router.post('/message', (req, res) => {
     console.log(req.query);
-    console.log(req.body);
-    res.status(201).send([{error: '', body: 'creado correctamente'}]);
-    // res.send(`Mensaje ${req.body.text} añadido correctamente`);
+    if (req.query.error =='ok') {
+        response.error(req, res, 'Error al crear desde server', 401);
+    } else {
+        response.success(req, res, 'Creado correctamente desde server', 201);
+    }
+    
 });
 
-// app.use('/', (req, res) => {
-//     res.send('Hola');
-// })
 
 app.listen(PUERTO);
 console.log(`La aplicacion esta escucando en http://localhost:${PUERTO}`);
