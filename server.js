@@ -33,6 +33,7 @@ router.post('/message', (req, res) => {
     
 });
 
+app.use('/app', express.static('public'));
 
 app.listen(PUERTO);
 console.log(`La aplicacion esta escucando en http://localhost:${PUERTO}`);
