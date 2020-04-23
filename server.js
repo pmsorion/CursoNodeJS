@@ -14,6 +14,10 @@ app.use(router);
 
 
 router.get('/message', (req, res) => {
+    console.log(req.headers);
+    res.header({
+        "custom-header": "Nuestro valor personalizado"
+    })
     res.send('Lista de mensajes');
 });
 
