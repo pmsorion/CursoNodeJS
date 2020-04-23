@@ -21,10 +21,11 @@ router.get('/message', (req, res) => {
     res.send('Lista de mensajes');
 });
 
-router.delete('/message', (req, res) => {
+router.post('/message', (req, res) => {
     console.log(req.query);
     console.log(req.body);
-    res.send(`Mensaje ${req.body.text} añadido correctamente`);
+    res.status(201).send([{error: '', body: 'creado correctamente'}]);
+    // res.send(`Mensaje ${req.body.text} añadido correctamente`);
 });
 
 // app.use('/', (req, res) => {
