@@ -1,0 +1,24 @@
+{
+  "name": "cursonodejs",
+  "version": "0.1.0",
+  "description": "Un chat como telegram pero mejor",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pmsorion/CursoNodeJS.git"
+  },
+  "keywords": [
+    "chat",
+    "telegram",
+    "server"
+  ],
+  "author": "Francisco Garcia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pmsorion/CursoNodeJS/issues"
+  },
+  "homepage": "https://github.com/pmsorion/CursoNodeJS#readme"
+}
