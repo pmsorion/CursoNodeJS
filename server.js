@@ -9,7 +9,6 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: false}));
 
 router(app);
-//app.use(router);
 
 app.use('/app', express.static('public'));
 
