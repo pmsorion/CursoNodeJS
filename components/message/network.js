@@ -23,4 +23,15 @@ router.post('/', (req, res) => {
         })
 });
 
+router.patch('/:id', (req, res) => {
+    controller.updateMessage(req.params.id, req.body.message)
+        .then((data) => {
+            response.success(req, res, data, 200);
+        })
+        .catch(e => {
+            response.error(req, res, 'Error interno', 500, e);
+        })
+    res.send('ok');
+})
+
 module.exports = router;
