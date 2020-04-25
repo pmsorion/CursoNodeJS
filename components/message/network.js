@@ -32,7 +32,17 @@ router.patch('/:id', (req, res) => {
         .catch(e => {
             response.error(req, res, 'Error interno', 500, e);
         })
-    res.send('ok');
+    //res.send('ok');
+})
+
+router.delete('/:id', (req, res) => {
+    controller.deleteMessage(req.params.id)
+        .then(() => {
+            response.success(re, res, `Usuario ${req.params.id} se ha eliminado`, 200);
+        })
+        .catch( e => {
+            response.error(req, res, 'Error interno', 500, e);
+        })
 })
 
 module.exports = router;
