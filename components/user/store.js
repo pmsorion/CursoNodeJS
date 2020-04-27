@@ -5,16 +5,11 @@ function addUser(user) {
     return myUser.save();
 }
 
-async function getUser(filterUser) {
-    let filter = {};
-    if (filterUser !== null) {
-        filter = { user: filterUser };
-    }
-    const user = await Model.find(filter);
-    return user;
+function listUsers() {
+    return Model.find();
 }
 
 module.exports = {
     add: addUser,
-    list: getUser,
+    list: listUsers,
 }

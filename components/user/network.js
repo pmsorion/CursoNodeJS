@@ -4,10 +4,9 @@ const controller = require('./controller');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    const filterUser = req.query.user || null;
-    controller.getUsers(filterUser)
-    .then((data) => {
-        response.success(req, res, data, 200);
+    controller.listUsers()
+    .then(users => {
+        response.success(req, res, users, 200);
     })
     .catch( e => {
         response.error(req, res, 'Unespected Error', 500, e);
