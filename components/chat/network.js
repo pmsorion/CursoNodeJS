@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
         .then(data => {
             response.success(req, res, data, 201);
         })
-        .cath(err => {
+        .catch(err => {
             response.error(req, res, 'Internal error', 500, err);
         });
 });
@@ -18,7 +18,7 @@ router.get('/:userId', (req, res) => {
         .then(users => {
             response.success(req, res, users, 200);
         })
-        .cath(err => {
+        .catch(err => {
             response.error(req, res, 'Internal error', 500, err);
         });
 });

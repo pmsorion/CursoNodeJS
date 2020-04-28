@@ -6,7 +6,7 @@ function addChat(users) {
     }
 
     const chat = {
-        users: users
+        users: users,
     };
     return store.add(chat);
 }
@@ -17,5 +17,5 @@ function listChats(userId) {
 
 module.exports = {
     addChat,
-    listChats
+    listChats,
 }
