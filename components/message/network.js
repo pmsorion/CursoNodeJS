@@ -3,10 +3,13 @@ const multer = require('multer');
 const response = require('../../network/response');
 const controller = require('./controller');
 const router = express.Router();
+const config = require('../../config');
+
 
 const upload = multer({
-    dest: 'public/files'
+    dest: `public/${config.filesRoute}`
 });
+
 
 router.get('/', (req, res) => {
     const filterMessage = req.query.user || null;
